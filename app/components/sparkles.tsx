@@ -7,7 +7,7 @@
 import { HTMLAttributes, ReactNode, SVGAttributes, useState } from "react";
 import { useRandomInterval } from "~/utils/useRandomInterval";
 
-const DEFAULT_COLOR = "hsl(50deg, 100%, 50%)";
+const DEFAULT_COLOR = "#E54F6D";
 const random = (min: number, max: number) =>
   Math.floor(Math.random() * (max - min)) + min;
 
@@ -43,7 +43,7 @@ type SparkleInstanceProps = {
 };
 function SparkleInstance({ color, size, style }: SparkleInstanceProps) {
   return (
-    <div className="animate-grow-and-shrink absolute block" style={style}>
+    <div className="absolute block animate-grow-and-shrink" style={style}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={size}

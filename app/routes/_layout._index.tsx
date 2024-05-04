@@ -11,5 +11,9 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
-  return <div className="text-white">Hello World!</div>;
+  return (
+    <div className="text-base font-medium">
+      Hi, I'm Sudhanshu Ranjan; a frontend developer.
+    </div>
+  );
 }
