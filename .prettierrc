@@ -10,5 +10,6 @@
   "useTabs": false,
   "printWidth": 80,
   "pluginSearchDirs": false,
+  "tailwindFunctions": ["cn"],
   "plugins": ["prettier-plugin-tailwindcss"]
 }
