@@ -1,48 +1,19 @@
-# Welcome to Remix + Vite!
+Made with ❤️ by Sudhanshu.
 
-📖 See the [Remix docs](https://remix.run/docs) and the [Remix Vite docs](https://remix.run/docs/en/main/guides/vite) for details on supported features.
+---
 
-## Typegen
+This project uses [Remix](https://remix.run) for the application and [Cloudflare Pages](https://pages.cloudflare.com) for deployment.
 
-Generate types for your Cloudflare bindings in `wrangler.toml`:
+## Running it locally
 
-```sh
-npm run typegen
-```
+- Clone the repository
+- Run `npm install` to install the dependencies
+- Run `npm run dev` to start the development server
 
-You will need to rerun typegen whenever you make changes to `wrangler.toml`.
+## Deploying to Cloudflare Pages
 
-## Development
-
-Run the Vite dev server:
-
-```sh
-npm run dev
-```
-
-To run Wrangler:
-
-```sh
-npm run build
-npm run start
-```
-
-## Deployment
-
-> [!WARNING]  
-> Cloudflare does _not_ use `wrangler.toml` to configure deployment bindings.
-> You **MUST** [configure deployment bindings manually in the Cloudflare dashboard][bindings].
-
-First, build your app for production:
-
-```sh
-npm run build
-```
-
-Then, deploy your app to Cloudflare Pages:
-
-```sh
-npm run deploy
-```
-
-[bindings]: https://developers.cloudflare.com/pages/functions/bindings/
+- Fork this repository
+- Create a new project on Cloudflare Pages
+- Connect your GitHub account to Cloudflare
+- Select the repository you forked
+- Click on the "Begin setup" button and follow the steps
