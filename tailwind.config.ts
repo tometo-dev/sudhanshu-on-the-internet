@@ -6,8 +6,8 @@ export default {
     extend: {
       colors: {
         primary: "#363681",
-        secondary: "#788FE3",
-        tertiary: "#D9D5E8",
+        secondary: "#2646BA",
+        tertiary: "#E7E5F1",
         accent: "#E54F6D",
       },
       keyframes: {

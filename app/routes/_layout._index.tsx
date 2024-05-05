@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/cloudflare";
+import { Intro } from "./components/intro";
 
 export const meta: MetaFunction = () => {
   return [
@@ -12,8 +13,8 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className="text-base font-medium">
-      Hi, I'm Sudhanshu Ranjan; a frontend developer.
+    <div className="h-full w-full text-base font-medium">
+      <Intro />
     </div>
   );
 }
