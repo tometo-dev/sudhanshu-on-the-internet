@@ -19,7 +19,7 @@ export function Intro() {
             href="https://fletch.co"
             target="_blank"
             rel="noreferrer noopenner"
-            className="text-accent hover:underline"
+            className="text-accent focus:rounded focus:outline-none focus:ring-[1px] focus:ring-accent focus:ring-offset-2"
           >
             Fletch
           </a>
@@ -42,7 +42,7 @@ export function Intro() {
                 href="https://fletch.co/"
                 target="_blank"
                 rel="noreferrer"
-                className="text-accent hover:underline"
+                className="text-accent focus:rounded focus:outline-none focus:ring-[1px] focus:ring-accent focus:ring-offset-2"
               >
                 Fletch
               </a>
@@ -56,7 +56,7 @@ export function Intro() {
                 href="https://interviewkickstart.com/"
                 target="_blank"
                 rel="noreferrer"
-                className="text-accent hover:underline"
+                className="text-accent focus:rounded focus:outline-none focus:ring-[1px] focus:ring-accent focus:ring-offset-2"
               >
                 Interview Kickstart
               </a>
@@ -70,7 +70,7 @@ export function Intro() {
                 href="https://paytm.com/"
                 target="_blank"
                 rel="noreferrer"
-                className="text-accent hover:underline"
+                className="text-accent hover:underline focus:rounded focus:outline-none focus:ring-[1px] focus:ring-accent focus:ring-offset-2"
               >
                 Paytm
               </a>
@@ -84,7 +84,7 @@ export function Intro() {
                 href="https://www.aptusdatalabs.com/"
                 target="_blank"
                 rel="noreferrer"
-                className="text-accent hover:underline"
+                className="text-accent hover:underline focus:rounded focus:outline-none focus:ring-[1px] focus:ring-accent focus:ring-offset-2  "
               >
                 Aptus Data Labs
               </a>
@@ -109,13 +109,13 @@ export function Intro() {
       </section>
       <section title="contact">
         <h2 className="text-xl font-bold">Contact</h2>
-        <ul className="flex gap-2 pt-2">
+        <ul className="flex gap-4 pt-2">
           <li>
             <a
               href="https://www.linkedin.com/in/perfectsudh/"
               target="_blank"
               rel="noreferrer"
-              className="text-accent hover:underline"
+              className="text-accent hover:underline focus:outline-offset-2 focus:outline-accent"
             >
               <LinkedinIcon className="size-6 fill-accent" />
             </a>
@@ -125,7 +125,7 @@ export function Intro() {
               href="https://twitter.com/tsuki42_"
               target="_blank"
               rel="noreferrer"
-              className="text-accent hover:underline"
+              className="text-accent hover:underline focus:outline-offset-2 focus:outline-accent"
             >
               <TwitterIcon className="size-6 fill-accent" />
             </a>
@@ -135,7 +135,7 @@ export function Intro() {
               href="https://github.com/tometo-dev"
               target="_blank"
               rel="noreferrer"
-              className="text-accent hover:underline"
+              className="text-accent hover:underline focus:outline-offset-2 focus:outline-accent"
             >
               <GithubIcon className="size-6 fill-accent" />
             </a>
@@ -143,7 +143,7 @@ export function Intro() {
           <li>
             <a
               href="mailto:perfectsudh@gmail.com"
-              className="text-accent hover:underline"
+              className="text-accent focus:outline-offset-2 focus:outline-accent"
             >
               <MailIcon className="size-6 fill-accent" />
             </a>

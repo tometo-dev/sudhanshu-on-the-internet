@@ -13,7 +13,10 @@ export function Nav() {
       )}
     >
       <div className="mx-auto flex w-full items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
+        <Link
+          to="/"
+          className="flex items-center gap-2  focus:rounded-lg focus:outline-none focus:ring focus:ring-accent focus:ring-offset-2"
+        >
           <img
             src={logo}
             alt="logo"
@@ -24,6 +27,13 @@ export function Nav() {
               Sudhanshu
             </p>
           </Sparkles>
+        </Link>
+
+        <Link
+          to="/blogs"
+          className="cursor-pointer text-lg text-accent underline-offset-2 hover:underline focus:rounded-lg focus:outline-none focus:ring focus:ring-accent focus:ring-offset-2"
+        >
+          /blogs
         </Link>
       </div>
     </nav>

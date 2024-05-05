@@ -6,7 +6,7 @@ export function Footer({ className }: { className?: string }) {
       <p className="text-secondary">Made with ❤️ by Sudhanshu</p>
       <a
         href="https://github.com/tometo-dev/sudhanshu-on-the-internet"
-        className="ml-auto text-accent hover:underline"
+        className="ml-auto text-accent hover:underline focus:outline-none focus:ring-[1px] focus:ring-accent"
         target="_blank"
         rel="noreferrer"
       >
