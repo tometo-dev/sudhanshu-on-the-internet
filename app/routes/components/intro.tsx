@@ -9,7 +9,7 @@ export function Intro() {
       <section title="introduction" className="grid gap-2">
         <p>
           Hi, I'm Sudhanshu Ranjan. I'm a frontend developer with 5 years of
-          experience. I'm like building applications that are fast, accessible,
+          experience. I like building applications that are fast, accessible,
           and responsive. I believe that everyone should be able to use the web,
           and accessiblity is a key part of enabling that.
         </p>
