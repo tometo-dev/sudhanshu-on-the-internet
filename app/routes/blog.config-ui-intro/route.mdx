@@ -18,6 +18,8 @@ In this series, we will explore how we can create a configuration-driven form us
 Some motivation regarding the api structure of the config-driven form have been taken from [react-jsonschema-form](https://github.com/rjsf-team/react-jsonschema-form).
 
 We will not be using any _framework_ per se, but we will be using a few libraries to make our life easier.
+We will be building a form that can be customized for having any layout, any number of fields\*. While the form will be configurable,
+we will be limiting the scope of the form just collect the data and finally submit it.
 The libraries that we will be using are:
 
 - [React Hook Form](https://react-hook-form.com/)
@@ -29,5 +31,17 @@ The libraries that we will be using are:
   - It is a great library to use when you want to validate the data that is coming from the form.
 - [React Query](https://tanstack.com/query/latest/docs/framework/react/overview)
   - React Query is a library that helps with state management of async data in React.
+  - While being mostly used for fetching data from the server, it can also be used to manage the state of anything that is async.
+  - We will be using React Query to maintain and load various versions of the configurations for the form.
+- [TailwindCSS v2](https://v2.tailwindcss.com/)
+  - TailwindCSS is a utility-first CSS framework that helps you build custom designs without having to write custom CSS.
+  - We will be using TailwindCSS to style our form and make it look good.
+  - We will not be using tailwindcss directly, but by using [twind](https://twind.dev/handbook/introduction.html), which
+    basically is a tailwindcss-in-js library.
+  - (The reason we are restricting to tailwindcss v2 is because for v3 and above, twind shipped a different package altogether and setup is a bit different.
+    Since v2 still provides us with the most of the features that we need, we will be using v2. Also, twind has some goodies on top of tailwindcss v2 that we
+    will also be using.)
 
 In the next post, we will start by setting up our project and installing the required libraries.
+
+(\* - The form can support any number of fields, but for each of the supported field-types, we will have to write the rendering-logic code.)
