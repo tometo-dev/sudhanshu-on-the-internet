@@ -34,7 +34,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   return (
-    <div className="m-0 h-screen w-screen p-0 font-mono text-primary">
+    <div className="m-0 h-svh w-svw p-0 font-mono text-primary">
       <div className="relative mx-auto flex h-full w-full flex-col">
         <Nav />
         <main className="mx-auto h-full w-full flex-1 overflow-auto">
