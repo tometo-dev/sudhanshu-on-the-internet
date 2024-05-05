@@ -5,7 +5,17 @@ import {
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import svgr from "vite-plugin-svgr";
+import mdx from "@mdx-js/rollup";
 
 export default defineConfig({
-  plugins: [remixCloudflareDevProxy(), remix(), tsconfigPaths(), svgr()],
+  plugins: [
+    {
+      enforce: "pre",
+      ...mdx(),
+    },
+    remixCloudflareDevProxy(),
+    remix(),
+    tsconfigPaths(),
+    svgr(),
+  ],
 });
