@@ -9,7 +9,7 @@ export function Nav() {
   return (
     <nav
       className={cn(
-        "sticky top-0 flex w-full items-center bg-tertiary px-6 py-5 sm:px-16",
+        "sticky top-0 mx-auto flex w-full max-w-7xl items-center bg-tertiary px-6 py-5 sm:px-16",
       )}
     >
       <div className="mx-auto flex w-full items-center justify-between">

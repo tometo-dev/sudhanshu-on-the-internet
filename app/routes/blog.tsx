@@ -6,6 +6,7 @@ export default function Blog() {
       <div className="prose max-w-full flex-1 [&_a]:text-accent [&_a]:no-underline hover:[&_a]:underline focus:[&_a]:rounded focus:[&_a]:outline-none focus:[&_a]:ring-[1px] focus:[&_a]:ring-accent focus:[&_a]:ring-offset-2">
         <Outlet />
       </div>
+      <hr className="mt-2" />
       <aside className="pt-4">
         If you like what you read, consider following me on{" "}
         <a
