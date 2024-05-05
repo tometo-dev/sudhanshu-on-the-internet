@@ -101,6 +101,10 @@ export function Intro() {
           <li>Remix</li>
           <li>TypeScript</li>
           <li>Tailwind CSS</li>
+          <li>Git</li>
+          <li>Docker</li>
+          <li>Python</li>
+          <li>Django</li>
         </ul>
       </section>
       <section title="contact">
