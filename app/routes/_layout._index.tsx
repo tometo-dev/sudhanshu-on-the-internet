@@ -3,10 +3,10 @@ import { Intro } from "./components/intro";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Sudhanshu's Portfolio" },
+    { title: "Sudhanshu's Corner" },
     {
       name: "description",
-      content: "Sudhanshu's developer portfolio website",
+      content: "Sudhanshu's corner of the internet.",
     },
   ];
 };

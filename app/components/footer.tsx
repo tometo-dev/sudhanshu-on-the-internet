@@ -5,7 +5,7 @@ export function Footer({ className }: { className?: string }) {
     <footer className={cn("flex gap-2", className)}>
       <p className="text-secondary">Made with ❤️ by Sudhanshu</p>
       <a
-        href="https://github.com/tometo-dev/portfolio-remix"
+        href="https://github.com/tometo-dev/sudhanshu-on-the-internet"
         className="ml-auto text-accent hover:underline"
         target="_blank"
         rel="noreferrer"
