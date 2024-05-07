@@ -123,7 +123,7 @@ But the problem was that I had to use the MUI TextField component, and I couldn'
 
 ## The Solution
 While debugging multiple times, I noticed that even if the autocomplete suggestions were not showing up, when the component was unmounted/remounted, the suggestions
-would start showing up again. So, I that's what I did: a hacky solution to unmount/remount the component whenever the user selection changed. This meant that whenever
+would start showing up again. So, that's what I did: a hacky solution to unmount/remount the component whenever the user selection changed. This meant that whenever
 the user selected an address or even cleared the address, the component would unmount and remount, and the suggestions would start showing up again.
 And all it took was a simple <span className="text-accent font-bold">key</span> prop to the parent component.
 <figure className="w-full h-full flex flex-col">
