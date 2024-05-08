@@ -32,7 +32,6 @@ export default function Blog() {
           emitMetadata="0"
           inputPosition="top"
           theme="dark_dimmed"
-          loading="lazy"
         />
       </div>
     </div>

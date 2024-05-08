@@ -3,6 +3,13 @@ import notWorking from "./assets/not-working.png?url";
 import notWorking2 from "./assets/not-working2.png?url";
 import theHack from "./assets/the-hack.png?url";
 
+export const links: LinksFunction = () => [
+  { rel: "preload", as="image" href: works },
+  { rel: "preload", as="image" href: notWorking },
+  { rel: "preload", as="image" href: notWorking2 },
+  { rel: "preload", as="image" href: theHack },
+];
+
 > Google Maps API is weird
 
 > Google Maps API + Material UI is even weirder
