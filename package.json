@@ -16,6 +16,7 @@
     "cf-typegen": "wrangler types"
   },
   "dependencies": {
+    "@giscus/react": "3.0.0",
     "@remix-run/cloudflare": "2.9.1",
     "@remix-run/cloudflare-pages": "2.9.1",
     "@remix-run/react": "2.9.1",
