@@ -3,11 +3,11 @@ import notWorking from "./assets/not-working.png?url";
 import notWorking2 from "./assets/not-working2.png?url";
 import theHack from "./assets/the-hack.png?url";
 
-export const links: LinksFunction = () => [
-  { rel: "preload", as="image" href: works },
-  { rel: "preload", as="image" href: notWorking },
-  { rel: "preload", as="image" href: notWorking2 },
-  { rel: "preload", as="image" href: theHack },
+export const links = () => [
+  { rel: "preload", href: works, as: "image" },
+  { rel: "preload", href: notWorking, as: "image" },
+  { rel: "preload", href: notWorking2, as: "image" },
+  { rel: "preload", href: theHack, as: "image" },
 ];
 
 > Google Maps API is weird
