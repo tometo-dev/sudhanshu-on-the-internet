@@ -5,7 +5,7 @@ import MailIcon from "~/assets/icons/envelope-regular.svg?react";
 
 export function Intro() {
   return (
-    <div className="grid gap-2 text-justify text-base font-medium">
+    <div className="grid gap-2 text-base font-medium">
       <section title="introduction" className="grid gap-2">
         <p>
           Hi, I'm Sudhanshu Ranjan. I'm a frontend developer with 5 years of
