@@ -1,5 +1,19 @@
 import { Outlet } from "@remix-run/react";
 import Giscus from "@giscus/react";
+import { LoaderFunction, redirect } from "@remix-run/cloudflare";
+
+export const loader: LoaderFunction = ({ request }) => {
+  // check if the request has subpath
+  // since the /blog route is a layout route, this should never be rendered
+  // and users should be redirected to the /blogs route instead if they try to access it
+
+  // check if it ends with /blog or /blog/
+  if (request.url.endsWith("/blog") || request.url.endsWith("/blog/")) {
+    return redirect("/blogs");
+  }
+
+  return null;
+};
 
 export default function Blog() {
   return (
