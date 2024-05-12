@@ -25,6 +25,7 @@
     "miniflare": "^3.20240419.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
+    "rehype-highlight": "7.0.0",
     "tailwind-merge": "2.3.0"
   },
   "devDependencies": {
