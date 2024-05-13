@@ -46,6 +46,12 @@ export default function Blogs() {
           description="A day of my life I spent trying to make Google Autocomplete work well with Material UI."
           className="min-h-[12rem]"
         />
+        <BlogCard
+          link="/blog/use-imperative-handle"
+          title="Why useImperativeHandle?"
+          description="A quick guide on why and how to use useImperativeHandle."
+          className="min-h-[12rem]"
+        />
       </div>
     </div>
   );
