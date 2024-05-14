@@ -15,7 +15,16 @@ export const links = () => [
   },
 ];
 
-<BlogTimestamp timestamp="May 7, 2024"/>
+export const meta = () => [
+  { title: "Weird Google Autocomplete + MUI" },
+  {
+    description:
+      "Google Maps API + Material UI is even weirder. A tale of how I solved the autocomplete suggestions not showing up issue.",
+  },
+  { date: "May 7, 2024" },
+];
+
+<BlogTimestamp timestamp="May 7, 2024" />
 
 > Google Maps API is weird
 
@@ -110,21 +119,21 @@ and then usage was something like this:
 
 ```typescript
 useGooglePlacesAPI((instance) => {
-    autoCompleteInstanceRef.current = new instance.Autocomplete(
-      inputRef.current as HTMLInputElement,
-      {
-        componentRestrictions: { country: "us" },
-        fields: ["address_components", "formatted_address"],
-      }
-    );
+  autoCompleteInstanceRef.current = new instance.Autocomplete(
+    inputRef.current as HTMLInputElement,
+    {
+      componentRestrictions: { country: "us" },
+      fields: ["address_components", "formatted_address"],
+    },
+  );
 
-    autoCompleteInstanceRef.current.addListener("place_changed", () => {
-      const place = autoCompleteInstanceRef.current?.getPlace();
-       
-       // rest of the code
-       // ...
-    });
+  autoCompleteInstanceRef.current.addListener("place_changed", () => {
+    const place = autoCompleteInstanceRef.current?.getPlace();
+
+    // rest of the code
+    // ...
   });
+});
 ```
 
 If this worked, this blog post would have ended here. But it didn't. The issue still persisted.

@@ -1,3 +1,4 @@
+import { MetaFunction } from "@remix-run/cloudflare";
 import { Link } from "@remix-run/react";
 import { cn } from "~/lib/utils";
 
@@ -27,6 +28,15 @@ function BlogCard({
     </Link>
   );
 }
+
+export const meta: MetaFunction = () => {
+  return [
+    {
+      title: "Sudhanshu's Blogs",
+      description: "A collection of blogs written by me.",
+    },
+  ];
+};
 
 export default function Blogs() {
   return (

@@ -1,5 +1,5 @@
 import hooksRanking from "./assets/hooks-ranking.png?url";
-import { BlogTimestamp } from "../../components/blog-timestamp"
+import { BlogTimestamp } from "../../components/blog-timestamp";
 
 export const links = () => [
   { rel: "preload", href: hooksRanking, as: "image" },
@@ -9,9 +9,19 @@ export const links = () => [
   },
 ];
 
-<BlogTimestamp timestamp="May 13, 2024"/>
+export const meta = () => [
+  { title: "Why useImperativeHandle?" },
+  {
+    description:
+      "useImperativeHandle is a React Hook that lets you customize the handle exposed as a ref.",
+  },
+  { date: "May 13, 2024" },
+];
+
+<BlogTimestamp timestamp="May 13, 2024" />
 
 > `useImperativeHandle` is a [S-tier hook](https://x.com/DavidKPiano/status/1716097453403865288)
+>
 > - [David K Piano](https://twitter.com/DavidKPiano) (paraphrased)
 
 <figure className="flex h-full w-full flex-col">
@@ -20,11 +30,14 @@ export const links = () => [
 </figure>
 
 ## Context
+
 [useImperativeHandle](https://react.dev/reference/react/useImperativeHandle) is perhaps the most underused hook out of all the react hooks,
 and most of that is just because people have either never heard of it or don't know when to use it.
 
-If you look into the official documentation, it says: 
- > **useImperativeHandle** is a React Hook that lets you customize the handle exposed as a `ref`.
+If you look into the official documentation, it says:
+
+> **useImperativeHandle** is a React Hook that lets you customize the handle exposed as a `ref`.
+
 ```typescript
 useImperativeHandle(ref, createHandle, dependencies?)
 ```
@@ -37,16 +50,21 @@ But what if you need to interact with a custom component that is not a DOM eleme
 
 ## Problem
 
-> <span>(Here, I'm using a very specific problem that I had faced, but it demonstrates a usage that is applicable to a wide range of scenarios)</span>
+> <span>
+>   (Here, I'm using a very specific problem that I had faced, but it
+>   demonstrates a usage that is applicable to a wide range of scenarios)
+> </span>
 
-I have a custom component for accepting credit card details. The component makes use of a third-party library for 
+I have a custom component for accepting credit card details. The component makes use of a third-party library for
 collecting the credit card details. The reason for using a third-party library (like [stripe web elements](https://docs.stripe.com/payments/elements)) is because:
- - it provides a better user experience
- - it is more secure
- - and, you may not always have the certifications required to handle the credit card details yourself
+
+- it provides a better user experience
+- it is more secure
+- and, you may not always have the certifications required to handle the credit card details yourself
 
 The component needs to initialize the third-party library so that it can be used to collect the credit card details.
 Now, you could initialize the library in the `useEffect` hook in the parent component (why?) and pass the instance of the library to the child component as a prop.
+
 ```typescript
 function ParentComponent() {
   // other code
@@ -60,47 +78,56 @@ function ParentComponent() {
 }
 
 ```
+
 But, that would be a bad idea because:
- - it would break the encapsulation of the child component
- - it would make the child component less reusable
- - and, it would make the parent component more complex
+
+- it would break the encapsulation of the child component
+- it would make the child component less reusable
+- and, it would make the parent component more complex
 
 Also, what happens if you need to use another similar library for a different set of payment options? Do you initialize that in the parent component as well?
 
 ## Solution
+
 This is where `useImperativeHandle` comes into play. It allows you to customize the handle that is exposed as a `ref`.
 
 ```javascript
-function ChildComponent({ref, ...props}) {
+function ChildComponent({ ref, ...props }) {
   // other code
-  useImperativeHandle(ref, () => ({
-    initialize: () => {
-      // initialize the library
-      initialize()
-    }
-  }), [])
+  useImperativeHandle(
+    ref,
+    () => ({
+      initialize: () => {
+        // initialize the library
+        initialize();
+      },
+    }),
+    [],
+  );
   // rest of the code
 }
 
 function ParentComponent() {
-  const ref = useRef()
-  
+  const ref = useRef();
+
   // other code
 
-  return <ChildComponent ref={ref} />
+  return <ChildComponent ref={ref} />;
 }
-
 ```
+
 Now, the parent component can call the `initialize` method on the child component's ref whenever it needs to initialize the library.
 It may not be in an `useEffect`, but can be called in response to a user action (like button click) or some other event (like navigation).
 
 The point being, the parent component doesn't need to know how the library is initialized, it just needs to know that it can call the `initialize` method on the child component's ref.
 This approach does the following:
- - encapsulates the initialization logic within the child component
- - makes the child component more reusable
- - makes the parent component less complex
- - and, allows you to use multiple similar libraries in the same parent component: just conditionally render a different child component
+
+- encapsulates the initialization logic within the child component
+- makes the child component more reusable
+- makes the parent component less complex
+- and, allows you to use multiple similar libraries in the same parent component: just conditionally render a different child component
 
 ## Conclusion
+
 `useImperativeHandle` is a powerful hook and can be used to solve a particular set of problems that are not easily solvable using the declarative APIs.
 It is not a hook that you would use every day, but when you need it, you would be glad that it exists.
