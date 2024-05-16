@@ -56,6 +56,12 @@ export default function Blogs() {
           description="A quick guide on why and how to use useImperativeHandle."
           className="min-h-[12rem]"
         />
+        <BlogCard
+          link="/blog/improving-lcp"
+          title="Improving LCP for your page"
+          description="A quick guide on how to improve LCP for your page."
+          className="min-h-[12rem]"
+        />
       </div>
     </div>
   );

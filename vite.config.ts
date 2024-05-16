@@ -7,6 +7,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import svgr from "vite-plugin-svgr";
 import mdx from "@mdx-js/rollup";
 import rehypeHighlight from "rehype-highlight";
+import remarkGfm from "remark-gfm";
 
 export default defineConfig({
   plugins: [
@@ -14,6 +15,7 @@ export default defineConfig({
       enforce: "pre",
       ...mdx({
         rehypePlugins: [rehypeHighlight],
+        remarkPlugins: [remarkGfm],
       }),
     },
     remixCloudflareDevProxy(),
