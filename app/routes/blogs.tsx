@@ -45,12 +45,6 @@ export default function Blogs() {
       me. Here are some of my posts:
       <div className="flex h-full w-full flex-wrap gap-4 py-4">
         <BlogCard
-          link="/blog/config-ui-intro"
-          title="Config-based UI"
-          description="Introduction to what config-based UI is and why it's useful."
-          className="min-h-[12rem]"
-        />
-        <BlogCard
           link="/blog/weird-google-autocomplete"
           title="Weird Google Autocomplete + MUI"
           description="A day of my life I spent trying to make Google Autocomplete work well with Material UI."
