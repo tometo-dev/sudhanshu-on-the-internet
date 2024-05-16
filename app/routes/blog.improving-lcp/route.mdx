@@ -45,8 +45,11 @@ So, there was a page where the LCP was pretty high. To give you the numbers, hav
 | Load Time    | 0%       | 50ms     |
 | Render Delay | 5%       | 1,500ms  |
 
-Now obviously, these numbers are too high and seems like most of the time is spent in the Load Delay phase.
-So, I after trying to triage the problem (and failing), I did the next best thing: I asked for help.
+The image was optimized and was being served through a CDN. There was nothing else on the image front that could be done.
+This is also evident from the **Load Time** phase, which is only 50ms.
+
+Now obviously, these numbers are too high and seems like most of the time is spent in the **Load Delay** phase.
+So, after trying to fix the problem, and failing, the next thing I did was: I asked for help.
 
 > i'm trying to troubleshoot a LCP issue that's happening due to loading of image. In the affected site,
 > most of the time is taken by the "load delay". can anyone help me understand why "load delay" happens and
@@ -79,7 +82,7 @@ the load delay was happening due to the layout being delayed.
   <figcaption className="mx-auto">The critical rendering path</figcaption>
 </figure>
 
-So, either we needed to change the way the image was being used,
+This meant that either we needed to change the way the image was being used,
 
 **OR**, we needed someway to make sure that the image was loaded before the layout. Luckily, the browser has a way to do just that: [link preloading](https://web.dev/articles/preload-responsive-images#preload)
 
@@ -99,7 +102,7 @@ It also supports image [source-sets](https://developer.mozilla.org/en-US/docs/Le
 />
 ```
 
-I didn't know about this before, but now I do. And now you do too! 🎉
+I didn't know about this before, but now I do. And so do you! 🎉
 
 In case you want to use the <span className="text-accent">&lt;img&gt;</span> tag, you can do so as well:
 
@@ -120,3 +123,5 @@ feature that you didn't know about. Web-development and browser have come a long
 way, and most of the problems that we face today have a solution that's already
 been implemented. Using the platform to do the heavy lifting for you is often
 the easiest and simplest solution that can get the job done.
+
+Also, don't forget to ask for help. You never know who might be able to help you out.
