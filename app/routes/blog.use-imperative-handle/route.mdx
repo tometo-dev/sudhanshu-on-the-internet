@@ -87,6 +87,13 @@ But, that would be a bad idea because:
 
 Also, what happens if you need to use another similar library for a different set of payment options? Do you initialize that in the parent component as well?
 
+There may also be other thoughts going through your mind, like:
+
+- I can just initialize them in the child component itself
+- I can use a context to provide the instance to the child component
+
+Feel free to discuss these thoughts below in the comments.
+
 ## Solution
 
 This is where `useImperativeHandle` comes into play. It allows you to customize the handle that is exposed as a `ref`.
