@@ -45,9 +45,9 @@ export default function Blogs() {
       me. Here are some of my posts:
       <div className="flex h-full w-full flex-wrap gap-4 py-4">
         <BlogCard
-          link="/blog/weird-google-autocomplete"
-          title="Weird Google Autocomplete + MUI"
-          description="A day of my life I spent trying to make Google Autocomplete work well with Material UI."
+          link="/blog/improving-lcp"
+          title="Improving LCP for your page"
+          description="A quick guide on how to improve LCP for your page."
           className="min-h-[12rem]"
         />
         <BlogCard
@@ -57,9 +57,9 @@ export default function Blogs() {
           className="min-h-[12rem]"
         />
         <BlogCard
-          link="/blog/improving-lcp"
-          title="Improving LCP for your page"
-          description="A quick guide on how to improve LCP for your page."
+          link="/blog/weird-google-autocomplete"
+          title="Weird Google Autocomplete + MUI"
+          description="A day of my life I spent trying to make Google Autocomplete work well with Material UI."
           className="min-h-[12rem]"
         />
       </div>

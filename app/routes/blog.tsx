@@ -18,7 +18,7 @@ export const loader: LoaderFunction = ({ request }) => {
 export default function Blog() {
   return (
     <div className="flex h-full w-full flex-col">
-      <div className="prose max-w-full flex-1 [&_a]:text-accent [&_a]:no-underline hover:[&_a]:underline focus:[&_a]:rounded focus:[&_a]:outline-none focus:[&_a]:ring-[1px] focus:[&_a]:ring-accent focus:[&_a]:ring-offset-2">
+      <div className="prose max-w-full flex-1 [&_a]:text-accent [&_a]:underline-offset-4 focus:[&_a]:rounded focus:[&_a]:outline-none focus:[&_a]:ring-[1px] focus:[&_a]:ring-accent focus:[&_a]:ring-offset-2">
         <Outlet />
       </div>
       <hr className="my-4 inline-block" />

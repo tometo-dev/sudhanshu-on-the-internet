@@ -20,9 +20,11 @@ export const meta = () => [
 
 <BlogTimestamp timestamp="May 13, 2024" />
 
+# Why useImperativeHandle?
+
 > `useImperativeHandle` is a [S-tier hook](https://x.com/DavidKPiano/status/1716097453403865288)
 >
-> - [David K Piano](https://twitter.com/DavidKPiano) (paraphrased)
+> <span>- [David K Piano](https://twitter.com/DavidKPiano) (paraphrased)</span>
 
 <figure className="flex h-full w-full flex-col">
   <img src={hooksRanking} className="mx-auto w-[30rem]" />
@@ -50,10 +52,7 @@ But what if you need to interact with a custom component that is not a DOM eleme
 
 ## Problem
 
-> <span>
->   (Here, I'm using a very specific problem that I had faced, but it
->   demonstrates a usage that is applicable to a wide range of scenarios)
-> </span>
+><span>(Here, I'm using a very specific problem that I had faced, but it demonstrates a usage that is applicable to a wide range of scenarios)</span>
 
 I have a custom component for accepting credit card details. The component makes use of a third-party library for
 collecting the credit card details. The reason for using a third-party library (like [stripe web elements](https://docs.stripe.com/payments/elements)) is because:
