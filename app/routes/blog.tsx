@@ -1,8 +1,10 @@
-import { Outlet } from "@remix-run/react";
+import { Outlet, useLoaderData } from "@remix-run/react";
 import Giscus from "@giscus/react";
-import { LoaderFunction, redirect } from "@remix-run/cloudflare";
+import { LoaderFunctionArgs, json, redirect } from "@remix-run/cloudflare";
+import { ShareOnTwitter } from "./components/share-twitter";
+import { TWITTER_HANDLE } from "~/utils/contants";
 
-export const loader: LoaderFunction = ({ request }) => {
+export const loader = ({ request }: LoaderFunctionArgs) => {
   // check if the request has subpath
   // since the /blog route is a layout route, this should never be rendered
   // and users should be redirected to the /blogs route instead if they try to access it
@@ -12,10 +14,12 @@ export const loader: LoaderFunction = ({ request }) => {
     return redirect("/blogs");
   }
 
-  return null;
+  return json({ pageUrl: request.url });
 };
 
 export default function Blog() {
+  const loaderData = useLoaderData<typeof loader>();
+
   return (
     <div className="flex h-full w-full flex-col">
       <div className="prose max-w-full flex-1 [&_a]:text-accent [&_a]:underline-offset-4 focus:[&_a]:rounded focus:[&_a]:outline-none focus:[&_a]:ring-[1px] focus:[&_a]:ring-accent focus:[&_a]:ring-offset-2">
@@ -24,16 +28,18 @@ export default function Blog() {
       <hr className="my-4 inline-block" />
       <div className="py-4">
         <aside className="border border-l-0 border-r-0 border-dotted border-b-accent border-t-accent p-4">
-          If you like what you read, consider following me on{" "}
+          If you like what you read, consider{" "}
           <a
-            href="https://twitter.com/tsuki42_"
+            href={`https://twitter.com/${TWITTER_HANDLE}`}
             target="_blank"
             rel="noreferrer"
-            className="text-accent hover:underline focus:rounded focus:outline-none focus:ring-[1px] focus:ring-accent focus:ring-offset-2"
+            className="text-accent underline underline-offset-4 focus:rounded focus:no-underline focus:outline-none focus:ring-[1px] focus:ring-accent focus:ring-offset-2"
           >
-            Twitter
-          </a>
-          .
+            following
+          </a>{" "}
+          me on Twitter, or{" "}
+          <ShareOnTwitter pageUrl={loaderData.pageUrl}>sharing</ShareOnTwitter>{" "}
+          this article.
         </aside>
       </div>
       <div className="h-full w-full text-primary">
