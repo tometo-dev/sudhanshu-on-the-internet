@@ -1,6 +1,11 @@
 import { Outlet, useLoaderData } from "@remix-run/react";
 import Giscus from "@giscus/react";
-import { LoaderFunctionArgs, json, redirect } from "@remix-run/cloudflare";
+import {
+  LoaderFunctionArgs,
+  MetaFunction,
+  json,
+  redirect,
+} from "@remix-run/cloudflare";
 import { ShareOnTwitter } from "./components/share-twitter";
 import { TWITTER_HANDLE } from "~/utils/contants";
 
@@ -15,6 +20,10 @@ export const loader = ({ request }: LoaderFunctionArgs) => {
   }
 
   return json({ pageUrl: request.url });
+};
+
+export const meta: MetaFunction = () => {
+  return [{ property: "og:type", content: "article" }];
 };
 
 export default function Blog() {
