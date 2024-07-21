@@ -2,8 +2,6 @@
  * Code taken from: https://www.joshwcomeau.com/react/animated-sparkles-in-react/
  * Author: Josh W. Comeau
  */
-"use client";
-
 import { HTMLAttributes, ReactNode, SVGAttributes, useState } from "react";
 import { useRandomInterval } from "~/utils/useRandomInterval";
 

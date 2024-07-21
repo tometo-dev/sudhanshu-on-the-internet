@@ -1,5 +1,3 @@
-"use client";
-
 import logo from "~/assets/images/logo.png?url";
 import { Sparkles } from "./sparkles";
 import { Link } from "@remix-run/react";

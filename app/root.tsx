@@ -1,11 +1,6 @@
+import { captureRemixErrorBoundaryError } from "@sentry/remix";
 import { LinksFunction } from "@remix-run/cloudflare";
-import {
-  Links,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-} from "@remix-run/react";
+import { Links, Meta, Outlet, Scripts, ScrollRestoration, useRouteError } from "@remix-run/react";
 import stylesheet from "~/tailwind.css?url";
 import { Nav } from "./components/nav";
 import { Footer } from "./components/footer";
@@ -31,6 +26,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
     </html>
   );
 }
+
+export const ErrorBoundary = () => {
+  const error = useRouteError();
+  captureRemixErrorBoundaryError(error);
+  return <div>Something went wrong</div>;
+};
 
 export default function App() {
   return (

@@ -1,3 +1,4 @@
+import { sentryVitePlugin } from "@sentry/vite-plugin";
 import {
   vitePlugin as remix,
   cloudflareDevProxyVitePlugin as remixCloudflareDevProxy,
@@ -10,17 +11,18 @@ import rehypeHighlight from "rehype-highlight";
 import remarkGfm from "remark-gfm";
 
 export default defineConfig({
-  plugins: [
-    {
-      enforce: "pre",
-      ...mdx({
-        rehypePlugins: [rehypeHighlight],
-        remarkPlugins: [remarkGfm],
-      }),
-    },
-    remixCloudflareDevProxy(),
-    remix(),
-    tsconfigPaths(),
-    svgr(),
-  ],
+  plugins: [{
+    enforce: "pre",
+    ...mdx({
+      rehypePlugins: [rehypeHighlight],
+      remarkPlugins: [remarkGfm],
+    }),
+  }, remixCloudflareDevProxy(), remix(), tsconfigPaths(), svgr(), sentryVitePlugin({
+    org: "tometo-dev",
+    project: "portfolio-remix"
+  })],
+
+  build: {
+    sourcemap: true
+  }
 });
