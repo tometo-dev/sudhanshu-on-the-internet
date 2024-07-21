@@ -17,3 +17,7 @@ This project uses [Remix](https://remix.run) for the application and [Cloudflare
 - Connect your GitHub account to Cloudflare
 - Select the repository you forked
 - Click on the "Begin setup" button and follow the steps
+
+## About OG Images
+
+OG Images are dynamically generated using [@vercel/og](https://vercel.com/docs/functions/og-image-generation). The project can be found [here](https://github.com/tometo-dev/nextjs-og-images).
