@@ -18,7 +18,7 @@ export function HaloEffect({
       <div className="grid size-20 [grid-column:1/2] [grid-row:1/2]">
         <div
           className={cn(
-            "m-auto size-[0px] animate-pulse [box-shadow:0px_0px_250px_100px_blue]",
+            "m-auto size-[0px] animate-pulse [box-shadow:0px_0px_250px_var(--spread-radius,50px)_blue] lg:[box-shadow:0px_0px_250px_100px_blue]",
             haloClassName,
           )}
         />

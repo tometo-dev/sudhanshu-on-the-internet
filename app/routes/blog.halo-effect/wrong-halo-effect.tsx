@@ -13,7 +13,7 @@ export function WrongHaloEffect({ className }: { className?: string }) {
         <img
           src={logo}
           alt="logo"
-          className="m-auto size-10 animate-pulse [box-shadow:0px_0px_250px_100px_blue]"
+          className="m-auto size-10 animate-pulse [box-shadow:0px_0px_250px_50px_blue] lg:[box-shadow:0px_0px_250px_100px_blue]"
         />
       </div>
     </div>

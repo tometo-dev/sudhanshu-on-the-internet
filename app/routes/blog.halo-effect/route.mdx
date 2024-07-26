@@ -36,7 +36,7 @@ export const meta = () => [
 Recently, I was working on a project where I was trying to add a halo effect to an image.
 
 The final output was supposed to look like this:
-<HaloEffect />
+<HaloEffect className="[--spread-radius:50px]" />
 
 Here's the effect with a more prominient color for emphasis:
 <HaloEffect haloClassName="[box-shadow:0px_0px_150px_100px_hotpink]"/>
@@ -153,4 +153,4 @@ I use tailwindcss for styling. The generated css for the classes used in the abo
 
 This finally gave me the desired effect. There was a halo around the image, the image wasn't pulsing and no square box outline around the image.
 
-<HaloEffect />
+<HaloEffect className="[--spread-radius:50px]" />
