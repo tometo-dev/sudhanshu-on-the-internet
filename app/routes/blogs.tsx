@@ -23,7 +23,7 @@ function BlogCard({
     >
       <div className="flex h-full flex-col gap-4 p-4 text-primary">
         <h2 className="text-xl font-bold">{title}</h2>
-        <p className="text-sm text-secondary ">{description}</p>
+        <p className="text-sm text-secondary">{description}</p>
       </div>
     </Link>
   );
@@ -44,6 +44,12 @@ export default function Blogs() {
       In this small corner of the internet, I write about things that interest
       me. Here are some of my posts:
       <div className="flex h-full w-full flex-wrap gap-4 py-4">
+        <BlogCard
+          link="/blog/halo-effect"
+          title="Halo Effect for Images"
+          description="A simple way to add a halo effect to your images."
+          className="min-h-[12rem]"
+        />
         <BlogCard
           link="/blog/improving-lcp"
           title="Improving LCP for your page"
