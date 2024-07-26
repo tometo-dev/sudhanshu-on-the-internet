@@ -2,8 +2,10 @@ import { BlogTimestamp } from "../components/blog-timestamp";
 import { HaloEffect } from "./halo-effect";
 import { WrongHaloEffect } from "./wrong-halo-effect";
 import { WrongHaloEffect2 } from "./wrong-halo-effect-2";
+import logo from "./assets/logo.png?url";
 
 export const links = () => [
+  { rel: "preload", href: logo, as: "image" },
   {
     rel: "stylesheet",
     href: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css",
@@ -39,7 +41,7 @@ The final output was supposed to look like this:
 <HaloEffect className="[--spread-radius:50px]" />
 
 Here's the effect with a more prominient color for emphasis:
-<HaloEffect haloClassName="[box-shadow:0px_0px_150px_100px_hotpink]"/>
+<HaloEffect haloClassName="![box-shadow:0px_0px_150px_100px_hotpink]"/>
 
 ## First Attempt
 

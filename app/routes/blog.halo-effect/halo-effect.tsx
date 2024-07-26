@@ -1,4 +1,4 @@
-import logo from "~/assets/images/logo.png?url";
+import logo from "./assets/logo.png?url";
 import { cn } from "~/lib/utils";
 
 export function HaloEffect({
