@@ -13,7 +13,7 @@ export function Nav() {
       <div className="mx-auto flex w-full items-center justify-between">
         <Link
           to="/"
-          className="flex items-center gap-2  focus:rounded-lg focus:outline-none focus:ring focus:ring-accent focus:ring-offset-2"
+          className="flex items-center gap-2 focus:rounded-lg focus:outline-none focus:ring focus:ring-accent focus:ring-offset-2"
         >
           <img
             src={logo}

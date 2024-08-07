@@ -84,7 +84,7 @@ export function Intro() {
                 href="https://www.aptusdatalabs.com/"
                 target="_blank"
                 rel="noreferrer"
-                className="text-accent hover:underline focus:rounded focus:outline-none focus:ring-[1px] focus:ring-accent focus:ring-offset-2  "
+                className="text-accent hover:underline focus:rounded focus:outline-none focus:ring-[1px] focus:ring-accent focus:ring-offset-2"
               >
                 Aptus Data Labs
               </a>
