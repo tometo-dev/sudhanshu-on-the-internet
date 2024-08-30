@@ -1,5 +1,4 @@
-import { MetaFunction } from "@remix-run/cloudflare";
-import { Link } from "@remix-run/react";
+import { Link, useLoaderData } from "@remix-run/react";
 import { cn } from "~/lib/utils";
 
 function BlogCard({
@@ -29,7 +28,39 @@ function BlogCard({
   );
 }
 
-export const meta: MetaFunction = () => {
+export const loader = () => {
+  // adapted from: https://github.com/remix-run/remix-website/blob/3cbd79fb69bbc3a4bf8c7c13ecfef0e1ba33ede8/app/lib/blog.server.ts#L8
+  const postContentBySlug = Object.fromEntries(
+    Object.entries(
+      import.meta.glob("./**/*.mdx", {
+        import: "frontmatter",
+        eager: true,
+      }),
+    ).map(([filePath, contents]) => {
+      return [
+        filePath
+          .replace("./", "/")
+          .replace(".", "/")
+          .replace(/\.mdx$/, ""),
+        contents,
+      ];
+    }),
+  ) as Record<
+    string,
+    {
+      /** Title of the blog */
+      title: string;
+      /** Description of the blog */
+      description: string;
+      /** Authored date in MMM DD, YYYY format (e.g. Sep 09, 2024) */
+      date: string;
+    }
+  >;
+
+  return postContentBySlug;
+};
+
+export const meta = () => {
   return [
     {
       title: "Sudhanshu's Blogs",
@@ -39,35 +70,22 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Blogs() {
+  const data = useLoaderData<typeof loader>();
+
   return (
     <div>
       In this small corner of the internet, I write about things that interest
       me. Here are some of my posts:
       <div className="flex h-full w-full flex-wrap gap-4 py-4">
-        <BlogCard
-          link="/blog/halo-effect"
-          title="Halo Effect for Images"
-          description="A simple way to add a halo effect to your images."
-          className="min-h-[12rem]"
-        />
-        <BlogCard
-          link="/blog/improving-lcp"
-          title="Improving LCP for your page"
-          description="A quick guide on how to improve LCP for your page."
-          className="min-h-[12rem]"
-        />
-        <BlogCard
-          link="/blog/use-imperative-handle"
-          title="Why useImperativeHandle?"
-          description="A quick guide on why and how to use useImperativeHandle."
-          className="min-h-[12rem]"
-        />
-        <BlogCard
-          link="/blog/weird-google-autocomplete"
-          title="Weird Google Autocomplete + MUI"
-          description="A day of my life I spent trying to make Google Autocomplete work well with Material UI."
-          className="min-h-[12rem]"
-        />
+        {Object.entries(data).map(([slug, { title, description }]) => (
+          <BlogCard
+            key={slug}
+            link={slug}
+            title={title}
+            description={description}
+            className="min-h-[12rem]"
+          />
+        ))}
       </div>
     </div>
   );

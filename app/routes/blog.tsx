@@ -22,7 +22,9 @@ export const loader = ({ request }: LoaderFunctionArgs) => {
   return json({ pageUrl: request.url });
 };
 
-export const meta: MetaFunction = () => {
+export const meta: MetaFunction = ({ matches }) => {
+  console.log(JSON.stringify(matches, null, 2));
+
   return [{ property: "og:type", content: "article" }];
 };
 
