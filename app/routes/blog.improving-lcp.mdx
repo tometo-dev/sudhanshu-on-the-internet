@@ -1,9 +1,13 @@
-import criticalRenderingPath from "./assets/critical-rendering-path.svg?url";
+---
+title: Improving LCP for your page
+description: Largest Contentful Paint (LCP) is a Core Web Vitals metric that measures perceived loading performance. Improving LCP can help improve user experience.
+date: May 16, 2024
+---
 
 import { BlogTimestamp } from "../components/blog-timestamp";
 
 export const links = () => [
-  { rel: "preload", href: criticalRenderingPath, as: "image" },
+  { rel: "preload", href: "/assets/critical-rendering-path.svg", as: "image" },
   {
     rel: "stylesheet",
     href: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css",
@@ -18,6 +22,10 @@ export const meta = () => [
   },
   { date: "May 16, 2024" },
   {
+    property: "og:type",
+    content: "article",
+  },
+  {
     property: "og:image",
     content: "https://og.sudh.online/api?title=Improving%20LCP%20for%20your%20page&description=Largest%20Contentful%20Paint%20(LCP)%20is%20a%20Core%20Web%20Vitals%20metric%20that%20measures%20perceived%20loading%20performance.%20Improving%20LCP%20can%20help%20improve%20user%20experience.",
   },
@@ -27,9 +35,9 @@ export const meta = () => [
   }
 ];
 
-<BlogTimestamp timestamp="May 16, 2024" />
+<BlogTimestamp timestamp={frontmatter.date} />
 
-# Improving LCP for your page
+# {frontmatter.title}
 
 ## Context
 
@@ -88,7 +96,7 @@ From the above, it was clear that using the image as a background-image was not 
 the load delay was happening due to the layout being delayed.
 
 <figure className="flex h-full w-full flex-col">
-  <img src={criticalRenderingPath} className="mx-auto w-[30rem]" />
+  <img src="/assets/critical-rendering-path.svg" className="mx-auto w-[30rem]" />
   <figcaption className="mx-auto">The critical rendering path</figcaption>
 </figure>
 

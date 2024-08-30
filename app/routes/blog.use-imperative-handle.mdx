@@ -1,8 +1,13 @@
-import hooksRanking from "./assets/hooks-ranking.png?url";
+---
+title: Why useImperativeHandle?
+description: useImperativeHandle is a React Hook that lets you customize the handle exposed as a ref.
+date: May 13, 2024
+---
+
 import { BlogTimestamp } from "../components/blog-timestamp";
 
 export const links = () => [
-  { rel: "preload", href: hooksRanking, as: "image" },
+  { rel: "preload", href: "/assets/hooks-ranking.png", as: "image" },
   {
     rel: "stylesheet",
     href: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css",
@@ -17,6 +22,10 @@ export const meta = () => [
   },
   { date: "May 13, 2024" },
   {
+    property: "og:type",
+    content: "article",
+  },
+  {
     property: "og:image",
     content: "https://og.sudh.online/api?title=Why%20useImperativeHandle%3F&description=useImperativeHandle%20is%20a%20React%20Hook%20that%20lets%20you%20customize%20the%20handle%20exposed%20as%20a%20ref.",
   },
@@ -26,16 +35,16 @@ export const meta = () => [
   }
 ];
 
-<BlogTimestamp timestamp="May 13, 2024" />
+<BlogTimestamp timestamp={frontmatter.date} />
 
-# Why useImperativeHandle?
+# {frontmatter.title}
 
 > `useImperativeHandle` is a [S-tier hook](https://x.com/DavidKPiano/status/1716097453403865288)
 >
 > <span>- [David K Piano](https://twitter.com/DavidKPiano) (paraphrased)</span>
 
 <figure className="flex h-full w-full flex-col">
-  <img src={hooksRanking} className="mx-auto w-[30rem]" />
+  <img src="/assets/hooks-ranking.png" className="mx-auto w-[30rem]" />
   <figcaption className="mx-auto">David K Piano's hooks ranking</figcaption>
 </figure>
 
