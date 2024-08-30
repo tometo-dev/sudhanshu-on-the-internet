@@ -1,4 +1,15 @@
-
+---
+title: Halo Effect for Images
+date: May 16, 2024
+meta:
+  - title: Halo Effect for Images
+  - description: Adding a halo effect to an image can be tricky. This blog post explores a particular way to add a halo effect to an image (or anything).
+  - date: May 16, 2024
+  - property: og:image
+    content: https://og.sudh.online/api?title=Halo%20Effect%20for%20Images&description=Adding%20a%20halo%20effect%20to%20an%20image%20can%20be%20tricky.%20This%20blog%20post%20explores%20a%20particular%20way%20to%20add%20a%20halo%20effect%20to%20an%20image%20(or%20anything).
+  - property: twitter:image
+    content: https://og.sudh.online/api?title=Halo%20Effect%20for%20Images&description=Adding%20a%20halo%20effect%20to%20an%20image%20can%20be%20tricky.%20This%20blog%20post%20explores%20a%20particular%20way%20to%20add%20a%20halo%20effect%20to%20an%20image%20(or%20anything).
+---
 
 import { BlogTimestamp } from "../components/blog-timestamp";
 import { HaloEffect } from "../components/blogs/halo-effect/halo-effect";
@@ -13,26 +24,9 @@ export const links = () => [
   },
 ];
 
-export const meta = () => [
-  { title: "Halo Effect for Images" },
-  {
-    description:
-      "Adding a halo effect to an image can be tricky. This blog post explores a particular way to add a halo effect to an image (or anything).",
-  },
-  { date: "May 16, 2024" },
-  {
-    property: "og:image",
-    content: "https://og.sudh.online/api?title=Halo%20Effect%20for%20Images&description=Adding%20a%20halo%20effect%20to%20an%20image%20can%20be%20tricky.%20This%20blog%20post%20explores%20a%20particular%20way%20to%20add%20a%20halo%20effect%20to%20an%20image%20(or%20anything).",
-  },
-  {
-    property: "twitter:image",
-    content: "https://og.sudh.online/api?title=Halo%20Effect%20for%20Images&description=Adding%20a%20halo%20effect%20to%20an%20image%20can%20be%20tricky.%20This%20blog%20post%20explores%20a%20particular%20way%20to%20add%20a%20halo%20effect%20to%20an%20image%20(or%20anything).",
-  }
-];
+<BlogTimestamp timestamp={frontmatter.date} />
 
-<BlogTimestamp timestamp="July 26, 2024" />
-
-# Halo Effect for Images
+# {frontmatter.title}
 
 ## Context
 

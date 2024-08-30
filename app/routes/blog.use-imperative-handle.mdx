@@ -1,3 +1,16 @@
+---
+title: Why useImperativeHandle?
+date: May 13, 2024
+meta:
+  - title: Why useImperativeHandle?
+  - description: useImperativeHandle is a React Hook that lets you customize the handle exposed as a ref.
+  - date: May 13, 2024
+  - property: og:image
+    content: https://og.sudh.online/api?title=Why%20useImperativeHandle%3F&description=useImperativeHandle%20is%20a%20React%20Hook%20that%20lets%20you%20customize%20the%20handle%20exposed%20as%20a%20ref.
+  - property: twitter:image
+    content: https://og.sudh.online/api?title=Why%20useImperativeHandle%3F&description=useImperativeHandle%20is%20a%20React%20Hook%20that%20lets%20you%20customize%20the%20handle%20exposed%20as%20a%20ref.
+---
+
 import { BlogTimestamp } from "../components/blog-timestamp";
 
 export const links = () => [
@@ -8,26 +21,9 @@ export const links = () => [
   },
 ];
 
-export const meta = () => [
-  { title: "Why useImperativeHandle?" },
-  {
-    description:
-      "useImperativeHandle is a React Hook that lets you customize the handle exposed as a ref.",
-  },
-  { date: "May 13, 2024" },
-  {
-    property: "og:image",
-    content: "https://og.sudh.online/api?title=Why%20useImperativeHandle%3F&description=useImperativeHandle%20is%20a%20React%20Hook%20that%20lets%20you%20customize%20the%20handle%20exposed%20as%20a%20ref.",
-  },
-  {
-    property: "twitter:image",
-    content: "https://og.sudh.online/api?title=Why%20useImperativeHandle%3F&description=useImperativeHandle%20is%20a%20React%20Hook%20that%20lets%20you%20customize%20the%20handle%20exposed%20as%20a%20ref.",
-  }
-];
+<BlogTimestamp timestamp={frontmatter.date} />
 
-<BlogTimestamp timestamp="May 13, 2024" />
-
-# Why useImperativeHandle?
+# {frontmatter.title}
 
 > `useImperativeHandle` is a [S-tier hook](https://x.com/DavidKPiano/status/1716097453403865288)
 >

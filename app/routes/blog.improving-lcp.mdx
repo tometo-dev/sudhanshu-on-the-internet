@@ -1,4 +1,15 @@
-
+---
+title: Improving LCP for your page
+date: May 16, 2024
+meta:
+  - title: Improving LCP for your page
+  - description: Largest Contentful Paint (LCP) is a Core Web Vitals metric that measures perceived loading performance. Improving LCP can help improve user experience.
+  - date: May 16, 2024
+  - property: og:image
+    content: https://og.sudh.online/api?title=Improving%20LCP%20for%20your%20page&description=Largest%20Contentful%20Paint%20(LCP)%20is%20a%20Core%20Web%20Vitals%20metric%20that%20measures%20perceived%20loading%20performance.%20Improving%20LCP%20can%20help%20improve%20user%20experience.
+  - property: twitter:image
+    content: https://og.sudh.online/api?title=Improving%20LCP%20for%20your%20page&description=Largest%20Contentful%20Paint%20(LCP)%20is%20a%20Core%20Web%20Vitals%20metric%20that%20measures%20perceived%20loading%20performance.%20Improving%20LCP%20can%20help%20improve%20user%20experience.
+---
 
 import { BlogTimestamp } from "../components/blog-timestamp";
 
@@ -10,26 +21,9 @@ export const links = () => [
   },
 ];
 
-export const meta = () => [
-  { title: "Improving LCP for your page" },
-  {
-    description:
-      "Largest Contentful Paint (LCP) is a Core Web Vitals metric that measures perceived loading performance. Improving LCP can help improve user experience.",
-  },
-  { date: "May 16, 2024" },
-  {
-    property: "og:image",
-    content: "https://og.sudh.online/api?title=Improving%20LCP%20for%20your%20page&description=Largest%20Contentful%20Paint%20(LCP)%20is%20a%20Core%20Web%20Vitals%20metric%20that%20measures%20perceived%20loading%20performance.%20Improving%20LCP%20can%20help%20improve%20user%20experience.",
-  },
-  {
-    property: "twitter:image",
-    content: "https://og.sudh.online/api?title=Improving%20LCP%20for%20your%20page&description=Largest%20Contentful%20Paint%20(LCP)%20is%20a%20Core%20Web%20Vitals%20metric%20that%20measures%20perceived%20loading%20performance.%20Improving%20LCP%20can%20help%20improve%20user%20experience.",
-  }
-];
+<BlogTimestamp timestamp={frontmatter.date} />
 
-<BlogTimestamp timestamp="May 16, 2024" />
-
-# Improving LCP for your page
+# {frontmatter.title}
 
 ## Context
 
