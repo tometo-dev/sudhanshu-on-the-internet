@@ -1,8 +1,7 @@
-import hooksRanking from "./assets/hooks-ranking.png?url";
 import { BlogTimestamp } from "../components/blog-timestamp";
 
 export const links = () => [
-  { rel: "preload", href: hooksRanking, as: "image" },
+  { rel: "preload", href: "/assets/hooks-ranking.png", as: "image" },
   {
     rel: "stylesheet",
     href: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css",
@@ -35,7 +34,7 @@ export const meta = () => [
 > <span>- [David K Piano](https://twitter.com/DavidKPiano) (paraphrased)</span>
 
 <figure className="flex h-full w-full flex-col">
-  <img src={hooksRanking} className="mx-auto w-[30rem]" />
+  <img src="/assets/hooks-ranking.png" className="mx-auto w-[30rem]" />
   <figcaption className="mx-auto">David K Piano's hooks ranking</figcaption>
 </figure>
 

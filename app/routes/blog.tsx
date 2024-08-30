@@ -6,7 +6,7 @@ import {
   json,
   redirect,
 } from "@remix-run/cloudflare";
-import { ShareOnTwitter } from "./components/share-twitter";
+import { ShareOnTwitter } from "~/components/share-twitter";
 import { TWITTER_HANDLE } from "~/utils/contants";
 
 export const loader = ({ request }: LoaderFunctionArgs) => {

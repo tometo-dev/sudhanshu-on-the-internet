@@ -1,14 +1,10 @@
-import works from "./assets/works.png?url";
-import notWorking from "./assets/not-working.png?url";
-import notWorking2 from "./assets/not-working2.png?url";
-import theHack from "./assets/the-hack.png?url";
 import { BlogTimestamp } from "../components/blog-timestamp";
 
 export const links = () => [
-  { rel: "preload", href: works, as: "image" },
-  { rel: "preload", href: notWorking, as: "image" },
-  { rel: "preload", href: notWorking2, as: "image" },
-  { rel: "preload", href: theHack, as: "image" },
+  { rel: "preload", href: "/assets/autocomplete-works.png", as: "image" },
+  { rel: "preload", href: "/assets/autocomplete-not-working.png", as: "image" },
+  { rel: "preload", href: "/assets/autocomplete-not-working2.png", as: "image" },
+  { rel: "preload", href: "/assets/autocomplete-hack.png", as: "image" },
   {
     rel: "stylesheet",
     href: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css",
@@ -46,7 +42,7 @@ My task was to incorporate google maps places api that should ideally provide au
 It should look like the following if working correctly:
 
 <figure className="flex h-full w-full flex-col">
-  <img src={works} className="mx-auto w-[30rem]" />
+  <img src="/assets/autocomplete-works.png" className="mx-auto w-[30rem]" />
   <figcaption className="mx-auto">Working autocomplete suggestions</figcaption>
 </figure>
 
@@ -54,7 +50,7 @@ It worked perfectly fine if the users entered the correct address. However, if t
 or god forbid, they cleared the address once entered, the autocomplete suggestions would not show up. It would look like the following:
 
 <figure className="flex h-full w-full flex-col">
-  <img src={notWorking} className="mx-auto w-[30rem]" />
+  <img src="/assets/autocomplete-not-working.png" className="mx-auto w-[30rem]" />
   <figcaption className="mx-auto">
     Not working autocomplete suggestions
   </figcaption>
@@ -64,7 +60,7 @@ No matter how much the user tried to type the address, the users would not get a
 getting any suggestions, they would also not be able to proceed further.
 
 <figure className="flex h-full w-full flex-col">
-  <img src={notWorking2} className="mx-auto w-[30rem]" />
+  <img src="/assets/autocomplete-not-working2.png" className="mx-auto w-[30rem]" />
   <figcaption className="mx-auto">No suggestions, no progress</figcaption>
 </figure>
 
@@ -163,7 +159,7 @@ the user selected an address or even cleared the address, the component would un
 And all it took was a simple <span className="text-accent font-bold">key</span> prop to the parent component.
 
 <figure className="flex h-full w-full flex-col">
-  <img src={theHack} className="mx-auto w-[30rem]" />
+  <img src="/assets/autocomplete-hack.png" className="mx-auto w-[30rem]" />
   <figcaption className="mx-auto">The hack that worked</figcaption>
 </figure>
 

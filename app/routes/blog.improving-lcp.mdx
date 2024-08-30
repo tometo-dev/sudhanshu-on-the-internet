@@ -1,9 +1,9 @@
-import criticalRenderingPath from "./assets/critical-rendering-path.svg?url";
+
 
 import { BlogTimestamp } from "../components/blog-timestamp";
 
 export const links = () => [
-  { rel: "preload", href: criticalRenderingPath, as: "image" },
+  { rel: "preload", href: "/assets/critical-rendering-path.svg", as: "image" },
   {
     rel: "stylesheet",
     href: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css",
@@ -88,7 +88,7 @@ From the above, it was clear that using the image as a background-image was not 
 the load delay was happening due to the layout being delayed.
 
 <figure className="flex h-full w-full flex-col">
-  <img src={criticalRenderingPath} className="mx-auto w-[30rem]" />
+  <img src="/assets/critical-rendering-path.svg" className="mx-auto w-[30rem]" />
   <figcaption className="mx-auto">The critical rendering path</figcaption>
 </figure>
 

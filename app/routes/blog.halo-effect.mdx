@@ -1,11 +1,12 @@
+
+
 import { BlogTimestamp } from "../components/blog-timestamp";
-import { HaloEffect } from "./halo-effect";
-import { WrongHaloEffect } from "./wrong-halo-effect";
-import { WrongHaloEffect2 } from "./wrong-halo-effect-2";
-import logo from "./assets/logo.png?url";
+import { HaloEffect } from "../components/blogs/halo-effect/halo-effect";
+import { WrongHaloEffect } from "../components/blogs/halo-effect/wrong-halo-effect";
+import { WrongHaloEffect2 } from "../components/blogs/halo-effect/wrong-halo-effect-2";
 
 export const links = () => [
-  { rel: "preload", href: logo, as: "image" },
+  { rel: "preload", href: "/assets/logo.png", as: "image" },
   {
     rel: "stylesheet",
     href: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css",
@@ -48,7 +49,7 @@ Here's the effect with a more prominient color for emphasis:
 I started by adding a `box-shadow` to the image. The code looked something like this:
 
 ```jsx
-  <img src={logo} alt="logo" className="m-auto size-10 animate-pulse [box-shadow:0px_0px_250px_100px_blue]" />   
+  <img src="/assets/logo.png" alt="logo" className="m-auto size-10 animate-pulse [box-shadow:0px_0px_250px_100px_blue]" />   
 ```
 But, the result this produced was not what I was looking for. The box-shadow added a square box outline around the image.
 <WrongHaloEffect />
@@ -68,7 +69,7 @@ Then adding the box-shadow to the div would give me the desired effect. Maybe, i
 ```jsx
   <div className="grid size-80 w-full items-center justify-center">
     <div className="grid [grid-column:1/2] [grid-row:1/2]">
-      <img src={logo} alt="logo" className="m-auto size-10" />
+      <img src="/assets/logo.png" alt="logo" className="m-auto size-10" />
     </div>
     <div className="grid size-20 [grid-column:1/2] [grid-row:1/2]">
       <div className="m-auto h-full w-full animate-pulse [box-shadow:0px_0px_250px_100px_blue]"/>
@@ -97,7 +98,7 @@ The best solution are often the simplest.
         <div className="m-auto size-[0px] animate-pulse [box-shadow:0px_0px_250px_100px_blue]" />
       </div>
       <div className="z-10 grid [grid-column:1/2] [grid-row:1/2]">
-        <img src={logo} alt="logo" className="m-auto size-10" />
+        <img src="/assets/logo.png" alt="logo" className="m-auto size-10" />
       </div>
     </div>
 ```

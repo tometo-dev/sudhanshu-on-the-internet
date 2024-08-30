@@ -1,4 +1,3 @@
-import logo from "./assets/logo.png?url";
 import { cn } from "~/lib/utils";
 
 export function HaloEffect({
@@ -24,7 +23,7 @@ export function HaloEffect({
         />
       </div>
       <div className="z-10 grid [grid-column:1/2] [grid-row:1/2]">
-        <img src={logo} alt="logo" className="m-auto size-10" />
+        <img src="/assets/logo.png" alt="logo" className="m-auto size-10" />
       </div>
     </div>
   );
