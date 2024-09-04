@@ -14,8 +14,7 @@ export const meta: MetaFunction = () => {
     { property: "og:locale", content: "en_US" },
     {
       property: "og:image",
-      content:
-        "https://og.sudh.online/api?title=Sudhanshu's%20Corner&description=Thoughts%20and%20musings%20of%20a%20developer",
+      content: "/og/og-image.jpeg",
     },
   ];
 };
