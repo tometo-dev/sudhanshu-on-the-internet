@@ -10,6 +10,7 @@ import rehypeHighlight from "rehype-highlight";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 import remarkGfm from "remark-gfm";
+import { openGraphImage } from "remix-og-image/plugin";
 
 export default defineConfig({
   plugins: [
@@ -24,5 +25,10 @@ export default defineConfig({
     remix(),
     tsconfigPaths(),
     svgr(),
+    openGraphImage({
+      elementSelector: "#og-image",
+      outputDirectory: "./og",
+      format: "jpeg",
+    }),
   ],
 });
