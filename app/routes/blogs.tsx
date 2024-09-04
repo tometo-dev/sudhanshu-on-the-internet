@@ -84,6 +84,14 @@ export const meta = () => {
       title: "Sudhanshu's Blogs",
       description: "A collection of blogs written by me.",
     },
+    { name: "twitter:site", content: "@tsuki42_" },
+    { name: "twitter:creator", content: "@tsuki42_" },
+    { property: "og:site_name", content: "Sudhanshu's Corner" },
+    { property: "og:locale", content: "en_US" },
+    {
+      property: "og:image",
+      content: "/og/index-og-image.jpeg",
+    },
   ];
 };
 
