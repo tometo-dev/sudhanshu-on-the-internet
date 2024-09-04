@@ -14,7 +14,7 @@ export const meta: MetaFunction = () => {
     { property: "og:locale", content: "en_US" },
     {
       property: "og:image",
-      content: "./og/og-image.jpeg",
+      content: "/og/og-image.jpeg",
     },
   ];
 };
