@@ -25,9 +25,10 @@ const getBlogDetails = async () => {
 };
 
 const indexOgData = {
-  name: "og-image",
+  // default og image for the root route
+  name: "index-og-image",
   params: {
-    slug: "og-image",
+    slug: "index-og-image",
   },
 };
 
